@@ -7,7 +7,7 @@ export interface RepositoriesState {
   data: string[];
 }
 
-export const initialState = {
+export const initialState: RepositoriesState = {
   loading: false,
   error: null,
   data: [],

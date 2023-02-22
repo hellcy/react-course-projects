@@ -1,11 +1,14 @@
+import { RepositoriesContextProvider } from "../state/contexts/repositoriesContext";
 import RepositoriesList from "./RepositoriesList";
 
 const App = () => {
   return (
-    <div>
-      <h1>Search For a Package</h1>
-      <RepositoriesList />
-    </div>
+    <RepositoriesContextProvider>
+      <div>
+        <h1>Search For a Package</h1>
+        <RepositoriesList />
+      </div>
+    </RepositoriesContextProvider>
   );
 };
 

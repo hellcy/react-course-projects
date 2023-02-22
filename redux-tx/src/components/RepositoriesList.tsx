@@ -1,14 +1,10 @@
-import React, { useReducer, useState } from "react";
+import React, { useState } from "react";
 import { actionCreators } from "../state";
-import repositoriesReducer from "../state/reducers/repositoriesReducer";
-import { initialState } from "../state/reducers/repositoriesReducer";
+import { useRepositoriesContext } from "../state/contexts/repositoriesContext";
 
 const RepositoriesList: React.FC = () => {
   const [term, setTerm] = useState("");
-  const [repositoriesState, dispatch] = useReducer(
-    repositoriesReducer,
-    initialState
-  );
+  const { repositoriesState, dispatch } = useRepositoriesContext();
   const { loading, error, data } = repositoriesState;
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
